@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import auptexHomieImage from "../assets/auptex-homie-device.png";
 import solarEnergyImage from "../assets/solar-energy-design.png";
-import sstMakerspaceImage from "../assets/sst-makerspace-design.png"
+import sstMakerspaceImage from "../assets/sst-makerspace-design.png";
 
 // TODO: Optimise images. Chage from png to webp.
 const HomePage = () => {
@@ -20,7 +20,7 @@ const HomePage = () => {
             University
           </p>
           <div className="flex gap-4 justify-center font-[Poppins]">
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="group">
               <Link to="/projects">
                 View My Work
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -57,13 +57,11 @@ const HomePage = () => {
             />
           </div>
           <div className="text-center mt-12">
-            <Button
-              variant="outline"
-              size="lg"
-              asChild
-              className="font-[Inter]"
-            >
-              <Link to="/projects">View All Projects</Link>
+            <Button size="lg" asChild className="font-[Inter] group">
+              <Link to="/projects">
+                View All Projects
+                <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
             </Button>
           </div>
         </div>

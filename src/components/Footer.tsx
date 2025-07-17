@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Right side - Social Navlinks */}
           <div className="flex gap-4">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -31,16 +31,16 @@ const Footer = () => {
               <FaGithub className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/emmanuel-saviour-a9812436b/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=ng"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="NavlinkedIn Profile"
+              aria-label="LinkedIn Profile"
             >
               <FaLinkedinIn className="h-5 w-5" />
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:saviour-emmanuel@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Email Me"
             >

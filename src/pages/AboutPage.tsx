@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Mail } from "lucide-react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
 
+// TODO: Add accurate information (mail, github(will probably be replaced)) and content to remove the lorem ipsums
 export default function AboutPage() {
   return (
     <div className="max-w-[1200px] mx-auto px-4">
@@ -93,7 +94,7 @@ export default function AboutPage() {
       {/* Education */}
       <section className="mb-16">
         <h2 className="text-2xl font-semibold mb-8 font-[Inter]">Education</h2>
-        <div className="border rounded-lg p-6">
+        <div className="border hover:border-primary/50 rounded-lg p-6">
           <h3 className="text-lg font-semibold mb-2 font-[Inter]">
             Pan-Atlantic University
           </h3>
