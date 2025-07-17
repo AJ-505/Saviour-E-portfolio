@@ -3,6 +3,7 @@ import {Navbar} from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import { ProjectsPage } from "./pages/ProjectsPage";
+import AboutPage from "./pages/AboutPage";
 // import AboutPage from "./pages/AboutPage";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <main className="container mx-auto px-4 py-8">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            {/* <Route path="/about" element={<AboutPage />} /> */}
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
           </Routes>
         </main>
