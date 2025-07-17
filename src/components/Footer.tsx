@@ -1,5 +1,6 @@
-import { Github, Mail, Linkedin } from 'lucide-react'
-import { NavLink } from './Navbar';
+import { Mail } from "lucide-react";
+import { NavLink } from "./Navbar";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -13,45 +14,33 @@ const Footer = () => {
 
           {/* Middle - Quick Navlinks */}
           <div className="flex gap-6">
-            <NavLink
-              to="/" 
-            >
-              Home
-            </NavLink>
-            <NavLink 
-              to="/about" 
-            >
-              About
-            </NavLink>
-            <NavLink 
-              to="/projects" 
-            >
-              Projects
-            </NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/projects">Projects</NavLink>
           </div>
 
           {/* Right side - Social Navlinks */}
           <div className="flex gap-4">
-            <a 
-              href="https://github.com/yourusername" 
-              target="_blank" 
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Github Profile"
             >
-              <Github className="h-5 w-5" />
+              <FaGithub className="h-5 w-5" />
             </a>
-            <a 
-              href="https://linkedin.com/in/yourusername" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="NavlinkedIn Profile"
             >
-              <Linkedin className="h-5 w-5" />
+              <FaLinkedinIn className="h-5 w-5" />
             </a>
-            <a 
-              href="mailto:your.email@example.com" 
+            <a
+              href="mailto:your.email@example.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Email Me"
             >
@@ -61,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 export default Footer;

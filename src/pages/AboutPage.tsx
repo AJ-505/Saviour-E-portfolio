@@ -1,6 +1,7 @@
 import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Mail, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
 
 export default function AboutPage() {
   return (
@@ -49,17 +50,17 @@ export default function AboutPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Github className="h-4 w-4" />
+                  <FaGithub className="h-4 w-4" />
                   GitHub
                 </a>
               </Button>
               <Button variant="outline" className="justify-start gap-2" asChild>
                 <a
-                  href="https://linkedin.com/"
+                  href="https://www.linkedin.com/in/emmanuel-saviour-a9812436b/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=ng"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Linkedin className="h-4 w-4" />
+                  <FaLinkedinIn className="h-4 w-4 text-black/88" />
                   LinkedIn
                 </a>
               </Button>
@@ -128,9 +129,7 @@ function SkillCard({
   return (
     <div className="border rounded-lg p-6 hover:border-primary/50 transition-colors">
       <h3 className="font-semibold mb-2 font-[Inter]">{title}</h3>
-      <p className="text-sm text-black/90 font-[Poppins]">
-        {description}
-      </p>
+      <p className="text-sm text-black/90 font-[Poppins]">{description}</p>
     </div>
   );
 }
