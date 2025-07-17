@@ -20,7 +20,7 @@ export const Navbar = () => {
   );
 };
 
-const NavLink = ({
+export const NavLink = ({
   to,
   children,
 }: {

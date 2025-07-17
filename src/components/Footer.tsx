@@ -1,5 +1,5 @@
-import { Github, Linkedin, Mail } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Github, Mail, Linkedin } from 'lucide-react'
+import { NavLink } from './Navbar';
 
 const Footer = () => {
   return (
@@ -11,29 +11,26 @@ const Footer = () => {
             © {new Date().getFullYear()} Emmanuel Saviour. All rights reserved.
           </div>
 
-          {/* Middle - Quick Links */}
+          {/* Middle - Quick Navlinks */}
           <div className="flex gap-6">
-            <Link 
+            <NavLink
               to="/" 
-              className="text-sm text-black/90 hover:text-foreground transition-colors"
             >
               Home
-            </Link>
-            <Link 
+            </NavLink>
+            <NavLink 
               to="/about" 
-              className="text-sm text-black/90 hover:text-foreground transition-colors"
             >
               About
-            </Link>
-            <Link 
+            </NavLink>
+            <NavLink 
               to="/projects" 
-              className="text-sm text-black/90 hover:text-foreground transition-colors"
             >
               Projects
-            </Link>
+            </NavLink>
           </div>
 
-          {/* Right side - Social Links */}
+          {/* Right side - Social Navlinks */}
           <div className="flex gap-4">
             <a 
               href="https://github.com/yourusername" 
@@ -49,7 +46,7 @@ const Footer = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="LinkedIn Profile"
+              aria-label="NavlinkedIn Profile"
             >
               <Linkedin className="h-5 w-5" />
             </a>
