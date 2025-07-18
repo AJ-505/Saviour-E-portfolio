@@ -45,7 +45,7 @@ Saviour-E-portfolio/
 │ ├── pages/
 │ └── main.tsx
 ├── package.json
-└── vite.config.js
+└── vite.config.ts
 ```
 
 ---
