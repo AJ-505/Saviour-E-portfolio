@@ -2,7 +2,14 @@ import { useEffect, useRef, useCallback } from "react";
 import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Mail } from "lucide-react";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaInstagram,
+  FaXTwitter,
+  FaResearchgate,
+} from "react-icons/fa6";
+import { FaMedium } from "react-icons/fa";
 
 import {
   SiKicad,
@@ -143,7 +150,7 @@ export default function AboutPage() {
   const currentTranslateX = useRef<number>(0);
   const contentWidth = useRef<number>(0); // Width of one full set of cards
 
-  const scrollSpeed = 1; // Pixels per frame
+  const scrollSpeed = 2.5; // Pixels per frame
 
   // Function to start the animation loop
   const animateScroll = useCallback(() => {
@@ -281,7 +288,7 @@ export default function AboutPage() {
                   asChild
                 >
                   <a
-                    href="https://github.com/emmanuelsaviour"
+                    href="https://github.com/Savvy-robot"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -295,12 +302,67 @@ export default function AboutPage() {
                   asChild
                 >
                   <a
-                    href="https://www.linkedin.com/in/emmanuel-saviour-a9812436b/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=ng"
+                    href="https://medium.com/@emmanuelsaviour348"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaLinkedinIn className="h-4 w-4 text-black/88" />
+                    <FaMedium className="h-4 w-4" />
+                    Medium
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="justify-start gap-2"
+                  asChild
+                >
+                  <a
+                    href="https://www.linkedin.com/in/emmanuel-saviour-a9812436b/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedinIn className="h-4 w-4" />
                     LinkedIn
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="justify-start gap-2"
+                  asChild
+                >
+                  <a
+                    href="https://www.instagram.com/silicon.ink/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaInstagram className="h-4 w-4" />
+                    Instagram
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="justify-start gap-2"
+                  asChild
+                >
+                  <a
+                    href="https://x.com/NerdSavi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaXTwitter className="h-4 w-4" />X (Twitter)
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="justify-start gap-2"
+                  asChild
+                >
+                  <a
+                    href="https://www.researchgate.net/profile/EmmanuelSaviour"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaResearchgate className="h-4 w-4" />
+                    ResearchGate
                   </a>
                 </Button>
               </div>
@@ -344,10 +406,10 @@ export default function AboutPage() {
                 management solutions for sustainable energy systems.
               </p>
               <div className="flex gap-2">
-                <span className="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
+                <span className="text-xs bg-blue-100 text-blue-800 px-3 py-1.5 rounded-full font-[Poppins]">
                   Power Electronics
                 </span>
-                <span className="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                <span className="text-xs bg-green-100 text-green-800 px-3 py-1.5 rounded-full font-[Poppins]">
                   Sustainability
                 </span>
               </div>
@@ -362,10 +424,10 @@ export default function AboutPage() {
                 Motobot Design Challenge.
               </p>
               <div className="flex gap-2">
-                <span className="text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full">
+                <span className="text-xs bg-purple-100 text-purple-950 px-3 py-1.5 rounded-full font-[Poppins]">
                   Innovation
                 </span>
-                <span className="text-xs bg-orange-100 text-orange-800 px-3 py-1 rounded-full">
+                <span className="text-xs bg-orange-100 text-orange-800 px-3 py-1.5 rounded-full font-[Poppins]">
                   Leadership
                 </span>
               </div>
@@ -526,3 +588,5 @@ function ToolCard({
     </div>
   );
 }
+
+export { tools, ToolCard };

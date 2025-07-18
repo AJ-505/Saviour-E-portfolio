@@ -4,9 +4,65 @@ import { Button } from "../components/ui/button";
 import auptexHomieImage from "../assets/auptex-homie-device.png";
 import solarEnergyImage from "../assets/solar-energy-design.png";
 import sstMakerspaceImage from "../assets/sst-makerspace-design.png";
+import { tools, ToolCard } from "./AboutPage";
+import {
+  FaInstagram,
+  FaXTwitter,
+  FaResearchgate,
+} from "react-icons/fa6";
+import { FaMedium } from "react-icons/fa";
+import { useCallback, useEffect, useRef } from "react";
 
 // TODO: Optimise images. Chage from png to webp.
 const HomePage = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const animationFrameId = useRef<number | null>(null);
+  const currentTranslateX = useRef<number>(0);
+  const contentWidth = useRef<number>(0);
+
+  const scrollSpeed = 2.5; 
+
+  // Copy the same animateScroll and useEffect logic from AboutPage
+  const animateScroll = useCallback(() => {
+    if (!scrollContainerRef.current) return;
+    currentTranslateX.current -= scrollSpeed;
+    if (Math.abs(currentTranslateX.current) >= contentWidth.current) {
+      currentTranslateX.current = 0;
+    }
+    scrollContainerRef.current.style.transform = `translateX(${currentTranslateX.current}px)`;
+    animationFrameId.current = requestAnimationFrame(animateScroll);
+  }, [scrollSpeed]);
+
+  useEffect(() => {
+    const measureAndStartScroll = () => {
+      if (scrollContainerRef.current) {
+        const firstSetOfCards = Array.from(
+          scrollContainerRef.current.children
+        ).slice(0, tools.length) as HTMLElement[];
+        let calculatedContentWidth = 0;
+        if (firstSetOfCards.length > 0) {
+          firstSetOfCards.forEach((card, index) => {
+            calculatedContentWidth += card.offsetWidth;
+            if (index < firstSetOfCards.length - 1) {
+              calculatedContentWidth += 32;
+            }
+          });
+        }
+        contentWidth.current = calculatedContentWidth;
+        animationFrameId.current = requestAnimationFrame(animateScroll);
+      }
+    };
+
+    const timeoutId = setTimeout(measureAndStartScroll, 100);
+
+    return () => {
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+      clearTimeout(timeoutId);
+    };
+  }, [animateScroll]);
+
   return (
     <div className="flex flex-col gap-12">
       {/* Hero Section */}
@@ -62,6 +118,76 @@ const HomePage = () => {
                 View All Projects
                 <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Tools I Use */}
+      <section className="py-16 overflow-hidden">
+        <div className="max-w-[1200px] mx-auto px-4">
+          <h2 className="text-3xl font-semibold mb-12 text-center font-[Inter]">
+            Tools I Use
+          </h2>
+          <div className="relative">
+            {/* Gradient Masks */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
+
+            {/* Scrolling Container */}
+            <div className="flex overflow-hidden py-4">
+              <div className="flex gap-8 flex-nowrap" ref={scrollContainerRef}>
+                {[...tools, ...tools, ...tools].map((tool, index) => (
+                  <ToolCard key={`tool-${index}`} {...tool} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media Links */}
+      <section className="py-8">
+        <div className="max-w-[980px] mx-auto px-4 text-center">
+          <h2 className="font-[Geist] text-3xl font-semibold mb-6">
+            Connect with Me
+          </h2>
+          <div className="flex gap-4 items-center justify-center mt-8">
+            <Button variant="ghost" size="icon" asChild>
+              <a
+                href="https://medium.com/@emmanuelsaviour348"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaMedium className="size-7" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a
+                href="https://www.instagram.com/silicon.ink/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram className="size-7" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a
+                href="https://x.com/NerdSavi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaXTwitter className="size-7" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a
+                href="https://www.researchgate.net/profile/EmmanuelSaviour"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaResearchgate className="size-7" />
+              </a>
             </Button>
           </div>
         </div>
