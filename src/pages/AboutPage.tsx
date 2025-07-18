@@ -124,19 +124,18 @@ const tools = [
 
 // 2. Create a mapping from tool name to its React Icon component
 const toolIcons: { [key: string]: React.ElementType } = {
-  "KiCad": SiKicad,
+  KiCad: SiKicad,
   "Altium Designer": SiAltiumdesigner,
-  "Proteus": SiProteus,
-  "AutoCAD": SiAutocad,
-  "Blender": SiBlender,
-  "Canva": SiCanva,
-  "Notion": SiNotion,
-  "Miro": SiMiro,
-  "PowerBI": SiPowers, // Assuming SiPowers is for PowerBI, please double-check your react-icons/si import
-  "Tableau": SiTableau,
-  "Medium": SiMedium,
+  Proteus: SiProteus,
+  AutoCAD: SiAutocad,
+  Blender: SiBlender,
+  Canva: SiCanva,
+  Notion: SiNotion,
+  Miro: SiMiro,
+  PowerBI: SiPowers, // Assuming SiPowers is for PowerBI, please double-check your react-icons/si import
+  Tableau: SiTableau,
+  Medium: SiMedium,
 };
-
 
 export default function AboutPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -176,27 +175,29 @@ export default function AboutPage() {
         // than hardcoding `singleCardWidth` if card widths might vary.
 
         // Get the first set of cards to measure
-        const firstSetOfCards = Array.from(scrollContainerRef.current.children).slice(0, tools.length) as HTMLElement[];
+        const firstSetOfCards = Array.from(
+          scrollContainerRef.current.children
+        ).slice(0, tools.length) as HTMLElement[];
 
         let calculatedContentWidth = 0;
         if (firstSetOfCards.length > 0) {
-            firstSetOfCards.forEach((card, index) => {
-                calculatedContentWidth += card.offsetWidth;
-                // Add gap for all but the last card in the set
-                if (index < firstSetOfCards.length -1) {
-                    calculatedContentWidth += 32; // gap-8 = 32px
-                }
-            });
-             // For some reason, the flex container's last item doesn't always have the gap on its right
-             // if it's the last item in a row before wrapping, but since we use flex-nowrap,
-             // it usually adds the gap. Let's re-verify this calculation by observing.
-             // A common alternative is to get `scrollWidth` of the *first* child container that holds `tools.length` elements.
+          firstSetOfCards.forEach((card, index) => {
+            calculatedContentWidth += card.offsetWidth;
+            // Add gap for all but the last card in the set
+            if (index < firstSetOfCards.length - 1) {
+              calculatedContentWidth += 32; // gap-8 = 32px
+            }
+          });
+          // For some reason, the flex container's last item doesn't always have the gap on its right
+          // if it's the last item in a row before wrapping, but since we use flex-nowrap,
+          // it usually adds the gap. Let's re-verify this calculation by observing.
+          // A common alternative is to get `scrollWidth` of the *first* child container that holds `tools.length` elements.
         } else {
-            // Fallback if elements aren't immediately available for measurement
-            // Using your previous hardcoded values
-            const singleCardWidth = 288; // w-72 = 72 * 4 = 288px
-            const gapWidth = 32;       // gap-8 = 8 * 4 = 32px
-            calculatedContentWidth = tools.length * (singleCardWidth + gapWidth);
+          // Fallback if elements aren't immediately available for measurement
+          // Using your previous hardcoded values
+          const singleCardWidth = 288; // w-72 = 72 * 4 = 288px
+          const gapWidth = 32; // gap-8 = 8 * 4 = 32px
+          calculatedContentWidth = tools.length * (singleCardWidth + gapWidth);
         }
 
         contentWidth.current = calculatedContentWidth;
@@ -217,7 +218,6 @@ export default function AboutPage() {
       clearTimeout(timeoutId);
     };
   }, [animateScroll]); // Dependency on tools.length to remeasure if tool count changes
-
 
   return (
     <>
@@ -315,17 +315,100 @@ export default function AboutPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <SkillCard
-              title="PCB Design"
-              description="Experienced in designing complex PCBs for various applications including IoT and automation systems."
+              title="PCB Design & Electronics"
+              description="Expert in designing complex PCBs using industry-standard tools like Eagle CAD, KiCad, and Altium Designer. Experienced in IoT device development and automation systems."
             />
             <SkillCard
-              title="Electrical Engineering"
-              description="Strong foundation in electrical systems, power electronics, and circuit design."
+              title="Power Systems & Energy"
+              description="Strong foundation in power electronics, sustainable energy solutions, and smart inverter design. Developed innovative power monitoring systems."
             />
             <SkillCard
-              title="Project Management"
-              description="Led multiple successful projects including the SST Makerspace initiative."
+              title="Project Leadership"
+              description="Successfully led the SST Makerspace initiative, organized technical workshops, and managed cross-functional teams in various engineering projects."
             />
+          </div>
+        </section>
+
+        {/* Research & Publications */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold mb-8 font-[Inter]">
+            Research & Publications
+          </h2>
+          <div className="grid grid-cols-1 gap-6">
+            <div className="border rounded-lg p-6 hover:border-primary/50 transition-colors">
+              <h3 className="font-semibold mb-2 font-[Inter]">
+                Smart Inverter Design Implementation
+              </h3>
+              <p className="text-sm text-black/90 font-[Poppins] mb-4">
+                Research focused on developing efficient and intelligent power
+                management solutions for sustainable energy systems.
+              </p>
+              <div className="flex gap-2">
+                <span className="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
+                  Power Electronics
+                </span>
+                <span className="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                  Sustainability
+                </span>
+              </div>
+            </div>
+            <div className="border rounded-lg p-6 hover:border-primary/50 transition-colors">
+              <h3 className="font-semibold mb-2 font-[Inter]">
+                SST Makerspace Initiative
+              </h3>
+              <p className="text-sm text-black/90 font-[Poppins] mb-4">
+                Led the establishment of Pan-Atlantic University's innovative
+                makerspace, including the successful implementation of the
+                Motobot Design Challenge.
+              </p>
+              <div className="flex gap-2">
+                <span className="text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full">
+                  Innovation
+                </span>
+                <span className="text-xs bg-orange-100 text-orange-800 px-3 py-1 rounded-full">
+                  Leadership
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Achievements */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold mb-8 font-[Inter]">
+            Featured Achievements
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="border rounded-lg p-6 hover:border-primary/50 transition-colors">
+              <h3 className="font-semibold mb-2 font-[Inter]">
+                Technical Innovation
+              </h3>
+              <ul className="space-y-2">
+                <li className="text-sm text-black/90 font-[Poppins] flex items-start gap-2">
+                  <span className="block w-1 h-1 rounded-full bg-primary mt-2"></span>
+                  Designed and implemented the PowerXense monitoring platform
+                </li>
+                <li className="text-sm text-black/90 font-[Poppins] flex items-start gap-2">
+                  <span className="block w-1 h-1 rounded-full bg-primary mt-2"></span>
+                  Developed the Auptex Homie Device for smart home automation
+                </li>
+              </ul>
+            </div>
+            <div className="border rounded-lg p-6 hover:border-primary/50 transition-colors">
+              <h3 className="font-semibold mb-2 font-[Inter]">Leadership</h3>
+              <ul className="space-y-2">
+                <li className="text-sm text-black/90 font-[Poppins] flex items-start gap-2">
+                  <span className="block w-1 h-1 rounded-full bg-primary mt-2"></span>
+                  Spearheaded the SST Makerspace initiative at Pan-Atlantic
+                  University
+                </li>
+                <li className="text-sm text-black/90 font-[Poppins] flex items-start gap-2">
+                  <span className="block w-1 h-1 rounded-full bg-primary mt-2"></span>
+                  Led multiple successful technical projects and research
+                  initiatives
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -425,7 +508,12 @@ function ToolCard({
           <IconComponent className="h-8 w-8 text-gray-800 dark:text-white" />
         ) : (
           <div className="w-6 h-6 bg-primary/20 rounded-lg flex items-center justify-center text-xs text-primary font-bold">
-            {name.split(' ').map(n => n[0]).join('').substring(0, 2)} {/* Fallback: Initials */}
+            {name
+              .split(" ")
+              .map((n) => n[0])
+              .join("")
+              .substring(0, 2)}{" "}
+            {/* Fallback: Initials */}
           </div>
         )}
       </div>
