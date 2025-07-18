@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Right side - Social Navlinks */}
           <div className="flex gap-4">
             <a
-              href="https://github.com/"
+              href="https://github.com/Savvy-robot"
               target="_blank"
               rel="noopener noreferrer"
               className="text-black/80 hover:text-foreground transition-colors"
