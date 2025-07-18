@@ -3,8 +3,7 @@
 ## Showcasing African embedded systems innovation
 
 ---
-
-![Alt text](src/assets/portfolio-preview.png "Preview")
+[![Saviour Emmanuel's portfolio preview](src/assets/portfolio-preview.png)](https://saviour-emmanuel.netlify.app)
 
 ---
 
