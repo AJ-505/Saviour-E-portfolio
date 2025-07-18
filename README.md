@@ -1,111 +1,71 @@
-⚙️ Emmanuel Saviour | Hardware Engineering & Innovation Portfolio
+# Saviour Emmanuel | Hardware Engineering Portfolio
 
-Dynamic, mobile-responsive portfolio showcasing African leadership in indigenous hardware innovation.
-🚀 Overview
-Welcome to the professional portfolio of Emmanuel Saviour, Co-Founder & Hardware Engineering Lead at Auptex. This project highlights Emmanuel’s groundbreaking work in embedded systems, African infrastructure innovation, and ecosystem building through technology.
-Whether you're a hardware enthusiast, collaborator, recruiter, or investor — this platform offers a clean, interactive way to explore technical projects and vision in African tech advancement.
-✨ Features
+## Showcasing African embedded systems innovation
 
-🔍 Technical Deep-Dives: Explore real-world hardware solutions with in-depth writeups, engineering specs, and case studies.
-📱 Responsive Design: Flawless performance across mobile, tablet, and desktop with adaptive layout using Tailwind CSS.
-🤝 Open Collaboration: Clear calls-to-action for partnerships, mentorships, and contributions to open hardware projects.
-⚙️ Modular Codebase: Built with clean, scalable React components and modern dev tooling.
+---
 
-🏗️ Folder Structure
+![Alt text](src/assets/portfolio-preview.png "Preview")
+
+---
+
+## 🚀 Overview
+
+Digital portfolio for Saviour Emmauel, Hardware Engineering Lead at [Auptex](https://auptex.africa). Highlights indigenous hardware solutions for Africa's infrastructure challenges.
+
+**Live Demo:** [saviour-emmanuel.netlify.app](https://saviour-emmanuel.netlify.app)
+
+---
+
+## 🔥 Key Features
+
+- **Smart Energy Systems**: 92% efficiency inverters for off-grid communities  
+- **Open Hardware**: CERN OHL-licensed circuit designs  
+- **Ecosystem Building**: Mentorship at SST Makerspace  
+
+---
+
+## 🛠️ Tech Stack
+
+| Component     | Technology               |
+|--------------|---------------------------|
+| Frontend     | React + Vite + Typescript |
+| Styling      | Tailwind CSS              |
+| Deployment   | Netlify                   |
+
+---
+
+## 📂 Repository Structure
+
+```plaintext
 Saviour-E-portfolio/
-├── public/                  # Static assets
-│   └── assets/              # Images, logos, and preview media
+├── public/
 ├── src/
-│   ├── components/          # Reusable React components
-│   │   ├── About.jsx        # Bio & mission
-│   │   ├── Projects.jsx     # Hardware projects
-│   │   └── ...              # Other sections (Skills, Contact, etc.)
-│   ├── hooks/               # Custom React hooks (e.g., scroll tracking)
-│   ├── App.jsx              # Main app router
-│   └── main.jsx             # React app entry point
-├── .github/                 # GitHub workflows & templates
-├── .eslintrc.cjs            # Linting configuration
-├── tailwind.config.js       # Tailwind theming
-└── vite.config.js           # Vite build configuration
+│ ├── components/
+|   ├── ui/
+| ├── assets/
+│ ├── pages/
+│ └── main.tsx
+├── package.json
+└── vite.config.js
+```
 
-⚡ Getting Started
-✅ Prerequisites
+---
 
-Node.js ≥ v18.x
-npm or Yarn installed
+## 🚀 Quick Start
 
-🧪 Local Development
+```bash
 git clone https://github.com/AJ-505/Saviour-E-portfolio.git
 cd Saviour-E-portfolio
 npm install
 npm run dev
+```
 
-Open your browser and navigate to: http://localhost:5173
-🚀 Production Build
-npm run build
+## 📜 License
 
-Outputs static files to /dist for production deployment.
-🛠️ Tech Stack
+MIT License
 
+## 🌍 Connect with Saviour
 
+- [LinkedIn](https://www.linkedin.com/in/emmanuel-saviour-a9812436b/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=ng)
 
-Area
-Technologies
-
-
-
-Frontend
-React, Vite, Tailwind CSS, Framer Motion
-
-
-Deployment
-Netlify (CI/CD, instant rollbacks)
-
-
-Tooling
-ESLint, Prettier
-
-
-🤝 Contribution Guide
-We welcome contributions! Follow these steps to get started:
-
-Fork this repo
-Create a new branch:git checkout -b feat/your-feature
-
-
-Make your changes and commit:git commit -m "feat: add your-feature"
-
-
-Push and open a Pull Request:git push origin feat/your-feature
-
-
-Before submitting:
-Run npm run lint for code quality checks
-Update relevant docs if adding new features
-
-
-
-📜 License
-This project is licensed under the MIT License. See LICENSE for more information.
-🌍 Connect with Emmanuel
-
-
-
-Platform
-Link
-
-
-
-Portfolio
-saviour-emmanuel.netlify.app
-
-
-LinkedIn
-Emmanuel Saviour
-
-
-GitHub
-@Savvy-robot
-
-
-🚧 Built with React, Vite, Tailwind, and a bold vision for African hardware innovation.
+- [Medium](https://medium.com/@emmanuelsaviour348)
