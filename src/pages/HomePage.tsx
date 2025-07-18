@@ -22,7 +22,7 @@ const HomePage = () => {
 
   const scrollSpeed = 2.5; 
 
-  // Copy the same animateScroll and useEffect logic from AboutPage
+  // Copy the same animateScroll and useEffect logic from AboutPage (For now, will update later)
   const animateScroll = useCallback(() => {
     if (!scrollContainerRef.current) return;
     currentTranslateX.current -= scrollSpeed;
@@ -158,6 +158,7 @@ const HomePage = () => {
                 href="https://medium.com/@emmanuelsaviour348"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Medium profile"
               >
                 <FaMedium className="size-7" />
               </a>
@@ -167,6 +168,7 @@ const HomePage = () => {
                 href="https://www.instagram.com/silicon.ink/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram profile"
               >
                 <FaInstagram className="size-7" />
               </a>
@@ -176,6 +178,7 @@ const HomePage = () => {
                 href="https://x.com/NerdSavi"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="X (Twitter) profile"
               >
                 <FaXTwitter className="size-7" />
               </a>
@@ -185,6 +188,7 @@ const HomePage = () => {
                 href="https://www.researchgate.net/profile/EmmanuelSaviour"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="ResearchGate Profile"
               >
                 <FaResearchgate className="size-7" />
               </a>
